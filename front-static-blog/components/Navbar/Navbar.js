@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 const Navbar = () => {
-  console.log("Navbar");
   return (
-    <div className="w-full py-5 lg:space-x-24 > * text-center mx-auto shadow-lg">
+    <div className="w-full py-5 lg:space-x-24 > * text-center mx-auto shadow">
       <Link href="/">
         <a className="py-2 px-5 rounded bg-transparent hover:bg-green-300 text-black hover:text-white duration-300">
           Home
@@ -14,7 +13,7 @@ const Navbar = () => {
           Categories
         </a>
       </Link>
-      <Link href="/">
+      <Link href="/about">
         <a className="py-2 px-5 rounded bg-transparent hover:bg-green-300 text-black hover:text-white duration-300">
           About
         </a>
