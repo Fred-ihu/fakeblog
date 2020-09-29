@@ -13,7 +13,7 @@ const Home = () => {
       {/* <div className="lg:flex justify-evenly"> */}
       <div className="px-2 sm:mx-10 xl:mx-24">
         <div className="flex flex-wrap -mx-2">
-          <div className="sm:w-full mt-8 md:w-1/2 xl:w-1/3 xl:mt-16 px-10">
+          <div className="sm:w-full mt-8 md:w-1/2 xl:w-1/3 xl:mt-16 px-10 hover:scale-110">
             <article className="rounded shadow-lg overflow-hidden">
               <img
                 className="w-full"
