@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar/Navbar';
 
 const About = () => {
   return (
-    <div><Navbar /> About</div>
+    <><Navbar /> About</>
 )};
 
 export default About;
