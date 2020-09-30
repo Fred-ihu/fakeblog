@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {openHamburgerMenu ? (
-        <MenuBackground />
+        <MenuBackground openHamburgerMenu={openHamburgerMenu} setOpenHamburgerMenu={setOpenHamburgerMenu}/>
       ) : (
         <div className="mx-auto shadow p-5">
           {/* <div className={"bg-green-300 h-screen w-screen " + (!openHamburgerMenu ? "hidden" : null)}></div> */}
