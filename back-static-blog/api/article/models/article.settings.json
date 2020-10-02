@@ -33,6 +33,10 @@
     "author": {
       "model": "author",
       "via": "articles"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

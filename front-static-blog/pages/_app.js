@@ -1,9 +1,7 @@
-import "../styles/tailwind.css";
-import {useState} from 'react';
+import '../styles/tailwind.css'
 
 function MyApp({ Component, pageProps }) {
-  const [testage, setTestage] = useState(false);
-  return <Component {...pageProps}{...testage} />;
+  return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default MyApp

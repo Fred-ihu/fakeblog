@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 import Navbar from "../components/Navbar/Navbar";
 
 const Home = () => {
-  let [initialState, setInitialState] = useState([]);
-  // console.log("initialState >> " + initialState);
+  let [allArticles, setAllArticles] = useState([]);
+  
 
   const getAllArticles = () => {
     axios({
@@ -17,16 +18,17 @@ const Home = () => {
     })
       .then((res) => {
         // console.log(res);
-        setInitialState(res.data);
+        setAllArticles(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
+console.log("TOUT LES ARTICLES", allArticles);
+  // const getArticleBy
 
   useEffect(() => {
     getAllArticles();
-    // console.log(initialState);
   }, []);
 
   return (
@@ -35,37 +37,41 @@ const Home = () => {
       <div className="px-2 sm:mx-10 xl:mx-24">
         <div className="flex flex-wrap -mx-2">
           {/* START ARTICLE */}
-          {initialState.map((article) => {
+          {allArticles.map((article) => {
             return (
               <div
                 className="sm:w-full mt-8 md:w-1/2 xl:w-1/3 xl:mt-16 px-10"
                 key={article.title}
               >
-                <article className="rounded shadow-lg overflow-hidden">
-                  <img
-                    className="w-full"
-                    src={`http://localhost:1337${article.image.url}`}
-                    alt="Sunset in the mountains"
-                  />
-                  <div className="px-6 pt-4">
-                    <div className="font-bold text-xl mb-2">
-                      {article.title}
+                <Link
+                  href="/article/[slug]"
+                  as={`article/${article.slug}`}>
+                  <article className="rounded shadow-lg overflow-hidden hover:scale-50 cursor-pointer transform hover:scale-105 duration-300">
+                    <img
+                      className="w-full h"
+                      src={`http://localhost:1337${article.image.url}`}
+                      alt="Sunset in the mountains"
+                    />
+                    <div className="px-6 pt-4">
+                      <div className="font-bold text-xl mb-2">
+                        {article.title}
+                      </div>
+                      <p className="text-gray-700 text-base">
+                        {article.content.length > 128
+                          ? `${article.content.slice(0, 250)}...`
+                          : article.content}
+                      </p>
+                      <div className="text-gray-500 text-sm mt-2">
+                        {article.author.nickname}
+                      </div>
                     </div>
-                    <p className="text-gray-700 text-base">
-                      {article.content.length > 128
-                        ? `${article.content.slice(0, 250)}...`
-                        : article.content}
-                    </p>
-                    <div className="text-gray-500 text-sm mt-2">
-                      {article.author.nickname}
+                    <div className="px-6 pt-4 mb-5">
+                      <span className="inline-block bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold text-gray-700 mr-2">
+                        #{article.category.name}
+                      </span>
                     </div>
-                  </div>
-                  <div className="px-6 pt-4 mb-5">
-                    <span className="inline-block bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold text-gray-700 mr-2">
-                      #{article.category.name}
-                    </span>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               </div>
             );
           })}
