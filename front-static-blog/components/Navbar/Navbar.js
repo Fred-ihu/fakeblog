@@ -5,7 +5,6 @@ import MenuBackground from "../MenuBackground";
 
 const Navbar = () => {
   const [openHamburgerMenu, setOpenHamburgerMenu] = useState(false);
-  console.log(openHamburgerMenu);
 
   return (
     <>

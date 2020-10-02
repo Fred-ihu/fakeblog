@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const MenuBackground = ({openHamburgerMenu, setOpenHamburgerMenu}) => {
-  console.log("MenuBackground");
   return (
     <>
       <div className="static bg-green-300 h-screen w-screen flex justify-center items-center p-5">
