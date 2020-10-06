@@ -30,7 +30,7 @@ const Article = () => {
 
   useEffect(() => {
     getArticleBySlug();
-  }, []);
+  }, article);
 
   console.log("ARTICLE HOOK CONTENT", article);
 

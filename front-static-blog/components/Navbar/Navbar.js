@@ -44,13 +44,6 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="pr-5">
-                <Link href="/categories">
-                  <div className="cursor-pointer py-2 px-5 rounded hover:bg-green-300 text-gray-600 hover:text-white duration-300 text-lg">
-                    Categories
-                  </div>
-                </Link>
-              </li>
-              <li className="pr-5">
                 <Link href="/about">
                   <div className="cursor-pointer py-2 px-5 rounded hover:bg-green-300 text-gray-600 hover:text-white duration-300 text-lg">
                     About
