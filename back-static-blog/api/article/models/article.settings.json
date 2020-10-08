@@ -31,8 +31,8 @@
       "via": "articles"
     },
     "author": {
-      "model": "author",
-      "via": "articles"
+      "via": "articles",
+      "model": "author"
     },
     "slug": {
       "type": "uid",

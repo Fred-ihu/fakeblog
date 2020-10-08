@@ -8,7 +8,7 @@ const Home = () => {
   let [allArticles, setAllArticles] = useState([]);
   let [searchContent, setSearchContent] = useState("");
 
-  console.log("searchContent", searchContent);
+  // console.log("searchContent", searchContent);
 
   const getAllArticles = () => {
     axios({
@@ -31,20 +31,22 @@ const Home = () => {
     getAllArticles();
   }, []);
 
-  const filteredArticles = allArticles.filter((foundedArticles) =>
-    foundedArticles.title.toLowerCase().includes(searchContent) ||
-    foundedArticles.category.name.toLowerCase().includes(searchContent)
+  const filteredArticles = allArticles.filter(
+    (foundedArticles) =>
+      foundedArticles.title.toLowerCase().includes(searchContent) ||
+      foundedArticles.category.name.toLowerCase().includes(searchContent)
   );
 
-  const articlesToDisplay = searchContent ? filteredArticles : allArticles; 
+  const articlesToDisplay = searchContent ? filteredArticles : allArticles;
 
   return (
     <div>
       <Navbar />
       <div className="px-2 sm:mx-10 xl:mx-24 flex flex-col">
+
         <input
           type="search"
-          placeholder="Search an article"
+          placeholder="Search for an article"
           className="rounded mx-8 mt-10 py-2 px-3 border-b-2 focus:border-green-300 duration-300 outline-none text-gray-500 text-center"
           name="searchArticle"
           value={searchContent}
@@ -52,7 +54,8 @@ const Home = () => {
             setSearchContent(evt.target.value);
           }}
         />
-        <div className="flex flex-wrap -mx-2">
+
+        <div className="flex flex-wrap -mx-2 pt-5">
           {/* START ARTICLE */}
           {articlesToDisplay.map((article) => {
             return (

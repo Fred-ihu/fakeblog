@@ -24,8 +24,11 @@
       "required": false
     },
     "articles": {
-      "via": "author",
-      "collection": "article"
+      "collection": "article",
+      "via": "author"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
