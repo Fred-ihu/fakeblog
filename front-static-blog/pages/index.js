@@ -53,12 +53,12 @@ const Home = () => {
           }}
         />
 
-        <div className="flex flex-wrap -mx-2 pt-5 mb-24">
+        <div className="flex flex-wrap -mx-2  mb-24">
           {/* START ARTICLE */}
           {articlesToDisplay.map((article) => {
             return (
               <div
-                className="sm:w-full mt-5 md:w-1/2 xl:w-1/3 px-8 text-gray-700"
+                className="sm:w-full mt-12 md:w-1/2 xl:w-1/3 px-8 text-gray-700"
                 key={article.title}
               >
                 <Link href="/article/[slug]" as={`article/${article.slug}`}>

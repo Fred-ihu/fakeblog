@@ -12,6 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
+    "pg": "^8.4.1",
     "slugify": "^1.4.5",
     "sqlite3": "latest",
     "strapi": "3.1.6",
@@ -25,7 +26,7 @@
     "strapi-utils": "3.1.6"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Fred-ihu"
   },
   "strapi": {
     "uuid": "285c6346-68b9-4584-b7e8-ac9022005430"
