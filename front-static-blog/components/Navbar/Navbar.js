@@ -16,7 +16,7 @@ const Navbar = () => {
           <nav className="flex md:justify-between items-center">
             <div className="flex justify-between w-full">
               <Link href="/">
-                <img className="ml-8 h-10 cursor-pointer" src="/logo_staticblogV1.svg" />
+                <img className="ml-8 h-10 cursor-pointer" src="/fakeblog_logo.svg" />
               </Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,14 +38,14 @@ const Navbar = () => {
             <ul className="hidden md:flex md:flex-row" id="mobileMenu">
               <li className="pr-5">
                 <Link href="/">
-                  <div className="cursor-pointer py-2 px-5 rounded hover:bg-green-300 text-gray-600 hover:text-white duration-300 text-lg">
+                  <div className="cursor-pointer py-2 px-5 rounded hover:bg-green-300 text-gray-700 hover:text-white duration-300 text-lg">
                     Home
                   </div>
                 </Link>
               </li>
               <li className="pr-5">
                 <Link href="/about">
-                  <div className="cursor-pointer py-2 px-5 rounded hover:bg-green-300 text-gray-600 hover:text-white duration-300 text-lg">
+                  <div className="cursor-pointer py-2 px-5 rounded hover:bg-green-300 text-gray-700 hover:text-white duration-300 text-lg">
                     About
                   </div>
                 </Link>

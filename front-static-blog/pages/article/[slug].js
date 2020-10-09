@@ -35,7 +35,7 @@ const Article = () => {
   console.log("ARTICLE HOOK CONTENT", article);
 
   return (
-    <div>
+    <>
       <Navbar />
       <article className="px-10 md:px-0">
         <img
@@ -54,7 +54,7 @@ const Article = () => {
           <p className="py-6 mt-6 text-gray-700 border-t-2">{article ? article.content : null}</p>
         </section>
       </article>
-    </div>
+    </>
   );
 };
 
