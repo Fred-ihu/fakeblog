@@ -12,7 +12,7 @@ const Home = () => {
   const getAllArticles = () => {
     axios({
       method: "get",
-      url: "http://localhost:1337/articles",
+      url: "https://fred-ihu-fakeblog.herokuapp.com/articles",
       headers: {
         "Content-Type": "application/json",
       },
