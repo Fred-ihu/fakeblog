@@ -1,8 +1,0 @@
-{
-  "provider": "cloudinary",
-  "providerOptions": {
-    "cloud_name": "fred-ihu",
-    "api_key": "618553233854917",
-    "api_secret": "qK_AixJqSEzbrCecdZ0f9Rq4o44"
-  }
-}
