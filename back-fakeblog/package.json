@@ -15,15 +15,15 @@
     "pg": "^8.4.1",
     "slugify": "^1.4.5",
     "sqlite3": "latest",
-    "strapi": "3.1.6",
-    "strapi-admin": "3.1.6",
-    "strapi-connector-bookshelf": "3.1.6",
-    "strapi-plugin-content-manager": "3.1.6",
-    "strapi-plugin-content-type-builder": "3.1.6",
-    "strapi-plugin-email": "3.1.6",
-    "strapi-plugin-upload": "3.1.6",
-    "strapi-plugin-users-permissions": "^3.1.6",
-    "strapi-utils": "3.1.6"
+    "strapi": "3.0.0",
+    "strapi-admin": "3.0.0",
+    "strapi-connector-bookshelf": "3.0.0",
+    "strapi-plugin-content-manager": "3.0.0",
+    "strapi-plugin-content-type-builder": "3.0.0",
+    "strapi-plugin-email": "3.0.0",
+    "strapi-plugin-upload": "3.0.0",
+    "strapi-plugin-users-permissions": "^3.0.0",
+    "strapi-utils": "3.0.0"
   },
   "author": {
     "name": "Fred-ihu"
@@ -32,7 +32,7 @@
     "uuid": "285c6346-68b9-4584-b7e8-ac9022005430"
   },
   "engines": {
-    "node": ">=10.16.0",
+    "node": ">=12.19.0",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
