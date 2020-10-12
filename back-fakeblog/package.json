@@ -15,15 +15,15 @@
     "pg": "^8.4.1",
     "slugify": "^1.4.5",
     "sqlite3": "latest",
-    "strapi": "3.0.0",
-    "strapi-admin": "3.0.0",
-    "strapi-connector-bookshelf": "3.0.0",
-    "strapi-plugin-content-manager": "3.0.0",
-    "strapi-plugin-content-type-builder": "3.0.0",
-    "strapi-plugin-email": "3.0.0",
-    "strapi-plugin-upload": "3.0.0",
-    "strapi-plugin-users-permissions": "^3.0.0",
-    "strapi-utils": "3.0.0"
+    "strapi": "3.x",
+    "strapi-admin": "3.x",
+    "strapi-connector-bookshelf": "3.x",
+    "strapi-plugin-content-manager": "3.x",
+    "strapi-plugin-content-type-builder": "3.x",
+    "strapi-plugin-email": "3.x",
+    "strapi-plugin-upload": "3.x",
+    "strapi-plugin-users-permissions": "^3.x",
+    "strapi-utils": "3.x"
   },
   "author": {
     "name": "Fred-ihu"
