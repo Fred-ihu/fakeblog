@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 
 const About = () => {
-  const [author, setAuthor] = useState();
+  const [author, setAuthor] = useState([]);
 
   const getAuthorById = () => {
     axios({
@@ -25,20 +25,20 @@ const About = () => {
 
   useEffect(() => {
     getAuthorById();
-  }, author);
+  }, []);
 
-  // console.log(author.nickname);
+  // console.log(author);
 
   return (
     <>
       <Navbar />
         <article className="mx-auto sm:w-full px-10 md:px-0 md:w-3/4 xl:w-2/4 mb-10 m-8">
           <div className="flex flex-col md:flex-row items-center">
-            <img
+            {/* <img
               src={`http://localhost:1337${author ? author.avatar.url : null}`}
               alt="alt a changer"
               className="w-1/4 rounded shadow-lg"
-            />
+            /> */}
             <h1 className="font-bold text-gray-700 text-3xl md:text-5xl text-center w-3/4 mt-6 md:mt-0">
               Hi, i'm {author ? author.nickname : null}
             </h1>
