@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "articles",
   "info": {
-    "name": "article"
+    "name": "article",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
   "attributes": {
     "title": {
@@ -26,17 +28,17 @@
       "plugin": "upload",
       "required": false
     },
-    "category": {
-      "model": "category",
-      "via": "articles"
-    },
-    "author": {
-      "via": "articles",
-      "model": "author"
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "category": {
+      "model": "category",
+      "via": "article"
+    },
+    "author": {
+      "model": "author",
+      "via": "articles"
     }
   }
 }

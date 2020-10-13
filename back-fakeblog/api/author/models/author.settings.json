@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "authors",
   "info": {
-    "name": "author"
+    "name": "author",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
   "attributes": {
     "nickname": {
@@ -24,11 +26,8 @@
       "required": false
     },
     "articles": {
-      "collection": "article",
-      "via": "author"
-    },
-    "description": {
-      "type": "richtext"
+      "via": "author",
+      "collection": "article"
     }
   }
 }

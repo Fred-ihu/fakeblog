@@ -1,39 +1,37 @@
 {
-  "name": "back-static-blog",
+  "name": "temp-fakeblog",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi develop",
+    "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
-    "pg": "^8.4.1",
-    "slugify": "^1.4.5",
-    "sqlite3": "latest",
-    "strapi": "3.1.6",
-    "strapi-admin": "3.1.6",
-    "strapi-connector-bookshelf": "3.1.6",
-    "strapi-plugin-content-manager": "3.1.6",
-    "strapi-plugin-content-type-builder": "3.1.6",
-    "strapi-plugin-email": "3.1.6",
-    "strapi-plugin-upload": "3.1.6",
-    "strapi-plugin-users-permissions": "^3.1.6",
+    "pg": "latest",
+    "strapi": "3.2.3",
+    "strapi-admin": "3.2.3",
+    "strapi-connector-bookshelf": "3.2.3",
+    "strapi-plugin-content-manager": "3.2.3",
+    "strapi-plugin-content-type-builder": "3.2.3",
+    "strapi-plugin-email": "3.2.3",
+    "strapi-plugin-upload": "3.2.3",
+    "strapi-plugin-users-permissions": "3.2.3",
     "strapi-provider-upload-cloudinary": "^3.2.3",
-    "strapi-utils": "3.1.6"
+    "strapi-utils": "3.2.3"
   },
   "author": {
-    "name": "Fred-ihu"
+    "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "285c6346-68b9-4584-b7e8-ac9022005430"
+    "uuid": "11670729-5eda-4aea-ab3c-1b6298e9ab90"
   },
   "engines": {
-    "node": ">=12.19.0",
+    "node": ">=10.0.0",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
