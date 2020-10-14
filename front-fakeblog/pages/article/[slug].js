@@ -14,7 +14,7 @@ const Article = () => {
   const getArticleBySlug = () => {
     axios({
       method: "get",
-      url: `http://localhost:1337/articles?slug=${slug}`,
+      url: `https://fred-ihu-strapi-fakeblog.herokuapp.com/articles?slug=${slug}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,7 +39,7 @@ const Article = () => {
       <Navbar />
       <article className="px-10 md:px-0">
         <img
-          src={`http://localhost:1337${article ? article.image.url : null}`}
+          src={`${article ? article.image.url : null}`}
           alt="alt a changer"
           className="mt-8 mx-auto md:w-3/4 lg:w-3/4 xl:w-2/4 shadow-md"
         />

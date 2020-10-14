@@ -34,7 +34,7 @@
     },
     "category": {
       "model": "category",
-      "via": "article"
+      "via": "articles"
     },
     "author": {
       "model": "author",

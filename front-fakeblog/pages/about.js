@@ -9,7 +9,7 @@ const About = () => {
   const getAuthorById = () => {
     axios({
       method: "get",
-      url: "http://localhost:1337/authors/4",
+      url: "https://fred-ihu-strapi-fakeblog.herokuapp.com/authors/4",
       headers: {
         "Content-Type": "application/json",
       },
@@ -34,11 +34,11 @@ const About = () => {
       <Navbar />
         <article className="mx-auto sm:w-full px-10 md:px-0 md:w-3/4 xl:w-2/4 mb-10 m-8">
           <div className="flex flex-col md:flex-row items-center">
-            {/* <img
-              src={`http://localhost:1337${author ? author.avatar.url : null}`}
+            <img
+              src={`${author ? author.avatar.url : null}`}
               alt="alt a changer"
               className="w-1/4 rounded shadow-lg"
-            /> */}
+            />
             <h1 className="font-bold text-gray-700 text-3xl md:text-5xl text-center w-3/4 mt-6 md:mt-0">
               Hi, i'm {author ? author.nickname : null}
             </h1>

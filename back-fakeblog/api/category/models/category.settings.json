@@ -14,9 +14,9 @@
     "name": {
       "type": "string"
     },
-    "article": {
+    "articles": {
       "via": "category",
-      "model": "article"
+      "collection": "article"
     }
   }
 }

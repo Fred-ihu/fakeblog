@@ -12,7 +12,7 @@ const Home = () => {
   const getAllArticles = () => {
     axios({
       method: "get",
-      url: "https://fred-ihu-fakeblog.herokuapp.com/articles",
+      url: "https://fred-ihu-strapi-fakeblog.herokuapp.com/articles",
       headers: {
         "Content-Type": "application/json",
       },
@@ -56,6 +56,7 @@ const Home = () => {
         <div className="flex flex-wrap -mx-2  mb-24">
           {/* START ARTICLE */}
           {articlesToDisplay.map((article) => {
+            // console.log(article.category);
             return (
               <div
                 className="sm:w-full mt-12 md:w-1/2 xl:w-1/3 px-8 text-gray-700"
@@ -65,7 +66,7 @@ const Home = () => {
                   <article className="rounded shadow-lg overflow-hidden hover:scale-50 cursor-pointer transform hover:scale-105 duration-300 min-h-full">
                     <img
                       className="w-full h"
-                      src={`http://localhost:1337${article.image.url}`}
+                      src={`${article.image.url}`}
                       alt="Sunset in the mountains"
                     />
                     <div className="px-6 pt-4">
@@ -83,7 +84,7 @@ const Home = () => {
                     </div>
                     <div className="px-6 pt-4 mb-5">
                       <div className="inline-block bg-gray-200 px-3 py-1 rounded-full text-sm font-semibold text-gray-700 mr-2">
-                        #{article.category.name}
+                        {/* #{article.category.name} */}
                       </div>
                     </div>
                   </article>
