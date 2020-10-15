@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Head from "next/head";
+import Moment from 'react-moment';
 
 import Navbar from "../components/Navbar/Navbar";
 import Loading from "../components/Loading/Loading";
@@ -92,7 +93,7 @@ const Home = () => {
                             : article.content}
                         </p>
                         <div className="text-gray-500 text-sm mt-2">
-                          {article.author.nickname}
+                          {article.author.nickname} - <Moment format="MMM d, YYYY">{article.created_at}</Moment>
                         </div>
                       </div>
                       <div className="px-6 pt-4 mb-5">

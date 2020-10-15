@@ -69,7 +69,7 @@ const About = () => {
             </p>
             <p className="pt-3">
               I'm open to work on total remote, or as a freelance. Feel free to
-              contact me :
+              contact me
               <a
                 href="mailto:edm.fred@gmail.com"
                 className="text-green-300 hover:text-white hover:bg-green-300 px-2 py-2 ml-1 rounded duration-300"
@@ -78,7 +78,7 @@ const About = () => {
               </a>
             </p>
             <p className="pt-3">
-              U can check my GitHub here :
+              You can check my GitHub profile here
               <a
                 href="https://github.com/Fred-ihu"
                 className="text-green-300 hover:text-white hover:bg-green-300 px-2 py-2 ml-1 rounded duration-300"
@@ -87,7 +87,7 @@ const About = () => {
               </a>
             </p>
             <p className="pt-3">
-              And my LinkedIn profile :
+              And my LinkedIn profile
               <a
                 href="https://linkedin.com/in/fred-ihuel"
                 className="text-green-300 hover:text-white hover:bg-green-300 px-2 py-2 ml-1 rounded duration-300"
