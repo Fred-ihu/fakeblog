@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Head from "next/head";
 
 import Navbar from "../components/Navbar/Navbar";
 import Loading from "../components/Loading/Loading";
@@ -45,6 +46,10 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <link rel="shortcun icon" href="/favicon.svg" />
+        <title>Fakeblog - a fake blog</title>
+      </Head>
       <Navbar />
       {loading ? (
         <Loading />

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Loading from "../../components/Loading/Loading";
@@ -41,13 +42,17 @@ const Article = () => {
 
   return (
     <>
+      <Head>
+        <link rel="shortcun icon" href="/favicon.svg" />
+        <title>{article ? article.title : null || ''}</title>
+      </Head>
       <Navbar />
       {loading ? (
         <Loading />
       ) : (
         <article className="px-10 md:px-0">
           <img
-            src={`${article ? article.image.url : null}`}
+            src={article ? article.image.url || '' : null || ''}
             alt="alt a changer"
             className="mt-8 mx-auto md:w-3/4 lg:w-3/4 xl:w-2/4 shadow-md"
           />

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 import Navbar from "../components/Navbar/Navbar";
 import Loading from "../components/Loading/Loading";
@@ -37,6 +38,10 @@ const About = () => {
 
   return (
     <>
+      <Head>
+        <link rel="shortcun icon" href="/favicon.svg" />
+        <title>About Fred</title>
+      </Head>
       <Navbar />
       {loading ? (
         <Loading />
