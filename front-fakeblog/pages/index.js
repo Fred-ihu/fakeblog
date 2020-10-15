@@ -38,8 +38,8 @@ const Home = () => {
 
   const filteredArticles = allArticles.filter(
     (results) =>
-      results.title.toLowerCase().includes(searchContent) ||
-      results.category.name.toLowerCase().includes(searchContent)
+      results.slug.includes(searchContent) ||
+      results.category.name.includes(searchContent)
   );
 
   const articlesToDisplay = searchContent ? filteredArticles : allArticles;
@@ -62,7 +62,7 @@ const Home = () => {
             name="searchArticle"
             value={searchContent}
             onChange={(evt) => {
-              setSearchContent(evt.target.value);
+              setSearchContent(evt.target.value.toLowerCase());
             }}
           />
 
