@@ -26,9 +26,6 @@ const MenuBackground = ({openHamburgerMenu, setOpenHamburgerMenu}) => {
             <Link href="/">Home</Link>
           </li>
           <li className="py-10 text-gray-700 hover:text-white duration-300 font-bold text-3xl" onClick={() => setOpenHamburgerMenu(!openHamburgerMenu)}>
-            <Link href="/categories">Categories</Link>
-          </li>
-          <li className="py-10 text-gray-700 hover:text-white duration-300 font-bold text-3xl" onClick={() => setOpenHamburgerMenu(!openHamburgerMenu)}>
             <Link href="/about">About</Link>
           </li>
         </ul>

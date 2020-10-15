@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import MenuBackground from "../MenuBackground";
+import MenuBackground from "../MenuBackground/MenuBackground";
 
 const Navbar = () => {
   const [openHamburgerMenu, setOpenHamburgerMenu] = useState(false);
