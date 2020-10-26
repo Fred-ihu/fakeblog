@@ -34,7 +34,7 @@ const Home = ({ allArticles }) => {
         <Loading />
       ) : (
         <div className="px-2 sm:mx-10 xl:mx-24 flex flex-col">
-          <div className="relative px-6 mt-6 -mb-6">
+          <div className="relative px-6">
             <span className="absolute inset-y-0 left-0 flex items-center pl-8 text-gray-700">
               <svg
                 fill="none"
@@ -43,14 +43,14 @@ const Home = ({ allArticles }) => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
-                className="w-5 mb-6"
+                className="w-5 mt-5"
               >
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </span>
-            <label for="articleSearch" className="invisible">
+            <label className="invisible">
+              search for an article
               <input
-                id="articleSearch"
                 type="search"
                 className="py-2 text-sm visible rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
                 placeholder="Search..."
@@ -60,7 +60,6 @@ const Home = ({ allArticles }) => {
                   setSearchContent(evt.target.value.toLowerCase());
                 }}
               />
-              search for an article by his title or category
             </label>
           </div>
 
