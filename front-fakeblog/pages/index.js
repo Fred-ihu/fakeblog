@@ -1,41 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Head from "next/head";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 
 import Navbar from "../components/Navbar/Navbar";
 import Loading from "../components/Loading/Loading";
 
-const Home = () => {
-  const [allArticles, setAllArticles] = useState([]);
+const Home = ({ allArticles }) => {
+  // const [allArticles, setAllArticles] = useState([]);
   const [searchContent, setSearchContent] = useState("");
-  const [loading, setLoading] = useState(true);
-
-  const getAllArticles = () => {
-    setLoading(true);
-    axios({
-      method: "get",
-      url: "https://fred-ihu-strapi-fakeblog.herokuapp.com/articles",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        // console.log(res);
-        setAllArticles(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .then(() => {
-        setLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    getAllArticles();
-  }, []);
+  const [loading, setLoading] = useState(false);
 
   const filteredArticles = allArticles.filter(
     (results) =>
@@ -56,31 +31,46 @@ const Home = () => {
         <Loading />
       ) : (
         <div className="px-2 sm:mx-10 xl:mx-24 flex flex-col">
-          <input
-            type="search"
-            placeholder="Search for an article"
-            className="rounded mx-8 mt-10 py-2 px-3 border-b-2 focus:border-green-300 duration-300 outline-none placeholder-color-gray-500 text-gray-700 text-center"
-            name="searchArticle"
-            value={searchContent}
-            onChange={(evt) => {
-              setSearchContent(evt.target.value.toLowerCase());
-            }}
-          />
+
+            <div className="relative px-6 mt-6">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-8 text-gray-700">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    className="w-5"
+                  >
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+              </span>
+              <input
+                type="search"
+                className="py-2 text-sm  rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
+                placeholder="Search..."
+                name="searchArticle"
+                value={searchContent}
+                onChange={(evt) => {
+                  setSearchContent(evt.target.value.toLowerCase());
+                }}
+              />
+            </div>
 
           <div className="flex flex-wrap -mx-2  mb-24">
             {/* START ARTICLE */}
             {articlesToDisplay.map((article) => {
-              // console.log(article.category);
               return (
                 <div
-                  className="sm:w-full mt-12 md:w-1/2 xl:w-1/3 px-8 text-gray-700"
+                  className="sm:w-full mt-6 md:w-1/2 xl:w-1/3 px-8 text-gray-700"
                   key={article.title}
                 >
                   <Link href="/article/[slug]" as={`article/${article.slug}`}>
                     <article className="rounded shadow-lg overflow-hidden hover:scale-50 cursor-pointer transform hover:scale-105 duration-300 min-h-full">
                       <img
                         className="w-full h"
-                        src={article.image.formats.medium.url}
+                        src={article.image.formats.small.url}
                         alt={article.title}
                       />
                       <div className="px-6 pt-4">
@@ -93,7 +83,10 @@ const Home = () => {
                             : article.content}
                         </p>
                         <div className="text-gray-500 text-sm mt-2">
-                          {article.author.nickname} - <Moment format="MMM d, YYYY">{article.created_at}</Moment>
+                          {article.author.nickname} -{" "}
+                          <Moment format="MMM d, YYYY">
+                            {article.created_at}
+                          </Moment>
                         </div>
                       </div>
                       <div className="px-6 pt-4 mb-5">
@@ -112,6 +105,23 @@ const Home = () => {
       )}
     </>
   );
+};
+
+// getStaticProps
+export const getStaticProps = async () => {
+  const response = await axios({
+    method: "get",
+    url: "https://fred-ihu-strapi-fakeblog.herokuapp.com/articles",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const allArticles = await response.data;
+  return {
+    props: {
+      allArticles,
+    },
+  };
 };
 
 export default Home;

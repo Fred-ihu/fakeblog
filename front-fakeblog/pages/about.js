@@ -1,40 +1,12 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
 
 import Navbar from "../components/Navbar/Navbar";
 import Loading from "../components/Loading/Loading";
 
-const About = () => {
-  const [author, setAuthor] = useState();
-  const [loading, setLoading] = useState(true);
-
-  const getAuthorById = () => {
-    setLoading(true);
-    axios({
-      method: "get",
-      url: "https://fred-ihu-strapi-fakeblog.herokuapp.com/authors/4",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        // console.log(res);
-        setAuthor(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .then(() => {
-        setLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    getAuthorById();
-  }, []);
-
-  // console.log(author.avatar.url);
+const About = ({ aboutAuthor }) => {
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -49,12 +21,12 @@ const About = () => {
         <article className="mx-auto sm:w-full px-10 md:px-0 md:w-3/4 xl:w-2/4 mb-10 m-8">
           <div className="flex flex-col md:flex-row items-center">
             <img
-              src={author.avatar.url}
+              src={aboutAuthor.avatar.url}
               alt="alt a changer"
               className="w-1/4 rounded shadow-lg"
             />
             <h1 className="font-bold text-gray-700 text-3xl md:text-5xl text-center w-3/4 mt-6 md:mt-0">
-              Hi, i'm {author.nickname}
+              Hi, i'm {aboutAuthor.nickname}
             </h1>
           </div>
           <div className="py-6 mt-6 text-gray-700 border-t-2">
@@ -100,6 +72,20 @@ const About = () => {
       )}
     </>
   );
+};
+
+// getStaticProps
+export const getStaticProps = async () => {
+  const response = await axios({
+    method: "get",
+    url: "https://fred-ihu-strapi-fakeblog.herokuapp.com/authors/4",
+  });
+  const aboutAuthor = await response.data;
+  return {
+    props: {
+      aboutAuthor,
+    },
+  };
 };
 
 export default About;
