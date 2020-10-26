@@ -3,7 +3,13 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [
+    "./pages/**/*.js", 
+    "./components/**/*.js", 
+    "./plugins/**/*.js",
+    "./static/**/*.js",
+    "./store/**/*.js"
+  ],
   theme: {
     extend: {},
   },
