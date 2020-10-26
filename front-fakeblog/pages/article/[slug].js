@@ -52,7 +52,7 @@ const Article = ({ articleTest }) => {
               <h1 className="font-bold text-gray-700 text-3xl">
                 {articleTest.title}
               </h1>
-              <h2 className="text-gray-600 text-md">
+              <h2 className="text-gray-700 text-md">
                 By {articleTest.author.nickname} -{" "}
                 <Moment format="MMM d, YYYY">{articleTest.created_at}</Moment>
               </h2>
