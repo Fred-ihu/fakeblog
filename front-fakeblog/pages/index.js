@@ -48,9 +48,10 @@ const Home = ({ allArticles }) => {
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </span>
-            <label className="invisible">
+            <label for="searchArticle" className="invisible">
               search for an article
               <input
+              id="searchArticle"
                 type="search"
                 className="py-2 text-sm visible rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
                 placeholder="Search..."
