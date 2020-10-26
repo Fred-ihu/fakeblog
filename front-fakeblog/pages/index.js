@@ -56,7 +56,7 @@ const Home = ({ allArticles }) => {
             <input
               id="searchArticle"
               type="search"
-              className="py-2 text-sm visible rounded-tl-none rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
+              className="py-2 text-sm visible rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
               placeholder="Search..."
               name="searchArticle"
               value={searchContent}
