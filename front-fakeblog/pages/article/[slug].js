@@ -15,6 +15,7 @@ const Article = ({ articleTest }) => {
       <Head>
         <link rel="shortcun icon" href="/favicon.svg" />
         <title>{articleTest.title || ""}</title>
+        <meta name="Description" content="This is a fake article to show strapi and nextjs combo"></meta>
       </Head>
       <Navbar />
       {loading ? (

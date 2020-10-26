@@ -16,7 +16,7 @@ const Navbar = () => {
           <nav className="flex md:justify-between items-center">
             <div className="flex justify-between w-full">
               <Link href="/">
-                <img className="ml-8 h-10 cursor-pointer" src="/fakeblog_logo.svg" />
+                <img className="ml-8 h-10 cursor-pointer" src="/fakeblog_logo.svg"  alt="feather with the blog name" />
               </Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
