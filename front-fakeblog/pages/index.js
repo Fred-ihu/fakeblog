@@ -34,7 +34,7 @@ const Home = ({ allArticles }) => {
         <Loading />
       ) : (
         <div className="px-2 sm:mx-10 xl:mx-24 flex flex-col">
-          <div className="relative px-6">
+          <div className="relative px-6 mt-5">
             <span className="absolute inset-y-0 left-0 flex items-center pl-8 text-gray-700">
               <svg
                 fill="none"
@@ -48,7 +48,7 @@ const Home = ({ allArticles }) => {
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </span>
-            <label for="searchArticle" className="invisible">
+            <label for="searchArticle" className="text-xs">
               search for an article
               <input
               id="searchArticle"
