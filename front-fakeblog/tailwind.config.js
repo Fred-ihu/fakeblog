@@ -15,7 +15,7 @@ module.exports = {
   },
   variants: {
     animation: ['responsive', 'motion-safe', 'motion-reduce'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-focus', 'focus-within'],
     textColor: ['responsive', 'hover', 'focus', 'active', 'group-focus', 'focus-within'],
   },
   plugins: [],

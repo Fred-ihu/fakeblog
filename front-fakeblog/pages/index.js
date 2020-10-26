@@ -34,7 +34,7 @@ const Home = ({ allArticles }) => {
         <Loading />
       ) : (
         <div className="px-2 sm:mx-10 xl:mx-24 flex flex-col">
-          <div className="relative px-6 mt-5">
+          <div className="relative px-6">
             <span className="absolute inset-y-0 left-0 flex items-center pl-8 text-gray-700">
               <svg
                 fill="none"
@@ -48,20 +48,22 @@ const Home = ({ allArticles }) => {
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </span>
-            <label for="searchArticle" className="text-xs">
+            <label
+              htmlFor="searchArticle"
+              className="text-xs text-white">
               search for an article
-              <input
-              id="searchArticle"
-                type="search"
-                className="py-2 text-sm visible rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
-                placeholder="Search..."
-                name="searchArticle"
-                value={searchContent}
-                onChange={(evt) => {
-                  setSearchContent(evt.target.value.toLowerCase());
-                }}
-              />
             </label>
+            <input
+              id="searchArticle"
+              type="search"
+              className="py-2 text-sm visible rounded-tl-none rounded-md pl-10 outline-none focus:border-green-300 border-2 border-gray-300 w-full placeholder-gray-700"
+              placeholder="Search..."
+              name="searchArticle"
+              value={searchContent}
+              onChange={(evt) => {
+                setSearchContent(evt.target.value.toLowerCase());
+              }}
+            />
           </div>
 
           <div className="flex flex-wrap -mx-2  mb-24">
