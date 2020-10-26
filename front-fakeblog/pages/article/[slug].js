@@ -43,7 +43,7 @@ const Article = ({ articleTest }) => {
           </div>
           <img
             src={articleTest ? articleTest.image.url || "" : null || ""}
-            alt="alt a changer"
+            alt={articleTest.title}
             className="mt-5 mx-auto md:w-3/4 lg:w-3/4 xl:w-2/4 shadow-md"
           />
           <section className="mx-auto sm:w-full md:w-3/4 xl:w-2/4 mb-10">

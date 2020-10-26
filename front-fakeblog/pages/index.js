@@ -8,13 +8,12 @@ import Navbar from "../components/Navbar/Navbar";
 import Loading from "../components/Loading/Loading";
 
 const Home = ({ allArticles }) => {
-  // const [allArticles, setAllArticles] = useState([]);
   const [searchContent, setSearchContent] = useState("");
   const [loading, setLoading] = useState(false);
 
   const filteredArticles = allArticles.filter(
     (results) =>
-      results.slug.includes(searchContent) ||
+      results.title.toLowerCase().includes(searchContent) ||
       results.category.name.includes(searchContent)
   );
 
